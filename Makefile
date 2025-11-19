@@ -82,7 +82,10 @@ $(OUTPUT):
 $(BUILD):
 	$(MD) $(BUILD)
 
-$(LIB_PATH): $(filter-out $(BUILD)/main.o, $(OBJECTS))
+$(LIB):
+	$(MD) $(LIB)
+
+$(LIB_PATH): $(LIB) $(filter-out $(BUILD)/main.o, $(OBJECTS))
 	ar rcs $@ $^
 
 $(MAIN): $(LIB_PATH) $(BUILD)/main.o

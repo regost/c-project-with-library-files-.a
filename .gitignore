@@ -1,7 +1,6 @@
 # Build artifacts
 build/
 output/
-lib/
 
 # Dependency files
 *.d
