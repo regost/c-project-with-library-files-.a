@@ -15,7 +15,7 @@
                 "${workspaceFolder}/include",
                 "-L",
                 "${workspaceFolder}/lib",
-                "-lmylib"
+                "-l:mylib.a"
             ],
             "options": {
                 "cwd": "${fileDirname}"

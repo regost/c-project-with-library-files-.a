@@ -89,7 +89,7 @@ $(LIB_PATH): $(LIB) $(filter-out $(BUILD)/main.o, $(OBJECTS))
 	ar rcs $@ $(filter-out $(BUILD)/main.o, $(OBJECTS))
 
 $(MAIN): $(LIB_PATH) $(BUILD)/main.o
-	$(CC) $(CFLAGS) $(INCLUDES) -o $(OUTPUTMAIN) $(BUILD)/main.o $(LFLAGS) $(LIBS) $(LIB_PATH)
+	$(CC) $(CFLAGS) $(INCLUDES) -o $(OUTPUTMAIN) $(BUILD)/main.o $(LFLAGS) $(LIBS) -l:mylib.a
 
 # include all .d files
 -include $(DEPS)
