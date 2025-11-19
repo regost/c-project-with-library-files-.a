@@ -30,7 +30,7 @@ INCLUDE	:= include
 LIB		:= lib
 
 # define library path
-LIB_PATH := $(LIB)/libmylib.a
+LIB_PATH := $(LIB)/mylib.a
 
 ifeq ($(OS),Windows_NT)
 MAIN	:= main.exe
@@ -86,7 +86,7 @@ $(LIB):
 	$(MD) $(LIB)
 
 $(LIB_PATH): $(LIB) $(filter-out $(BUILD)/main.o, $(OBJECTS))
-	ar rcs $@ $^
+	ar rcs $@ $(filter-out $(BUILD)/main.o, $(OBJECTS))
 
 $(MAIN): $(LIB_PATH) $(BUILD)/main.o
 	$(CC) $(CFLAGS) $(INCLUDES) -o $(OUTPUTMAIN) $(BUILD)/main.o $(LFLAGS) $(LIBS) $(LIB_PATH)
