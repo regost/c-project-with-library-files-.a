@@ -1,0 +1,14 @@
+# Build artifacts
+build/
+output/
+lib/
+
+# Dependency files
+*.d
+
+# Object files
+*.o
+
+# Executables
+main
+main.exe
